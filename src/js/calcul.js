@@ -13,7 +13,7 @@ document.getElementById('calcul').addEventListener('click', () => {
         contribution = document.getElementById('MS').value * 0.0068;
         // Then we display the result in a new div
         document.getElementById('TA').className = 'isDisplayed col-12 p-0';
-        document.getElementById('contributionTA').value = contribution.toFixed(2) + '€';
+        document.getElementById('contributionTA').value = contribution.toFixed(2);
         // setTimeout(() => {
         //     document.getElementById('spinnerCalcul').className = 'spinner-border isDisplayed offset-6';
         // }, 500);
@@ -22,10 +22,10 @@ document.getElementById('calcul').addEventListener('click', () => {
             eightySeven = contribution * 0.87;
             thirteen = contribution * 0.13;
             document.getElementById('detailCalcul').className = 'isDisplayed';
-            document.getElementById('contributionOPCA').value = eightySeven.toFixed(2) + '€';
-            document.getElementById('contributionETS').value = thirteen.toFixed(2) + '€';
+            document.getElementById('contributionOPCA').value = eightySeven.toFixed(2);
+            document.getElementById('contributionETS').value = thirteen.toFixed(2);
             ETSValue = document.getElementById('contributionETS').value;
             localStorage["ETSValue"] = ETSValue;
         // }, 2000);   
-    } 
+    }
   });
