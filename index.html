@@ -10,38 +10,128 @@
 </head>
 <body>
   <section class="input-group col-12 col-md-10 offset-md-1">
-      <div class="col-sm-12">
-        <h1>Calcul de votre taxe d'apprentissage</h1>
-        <p class="lead">Veuillez entrer votre masse salariale brute ci-dessous pour effectuer le calcul de votre taxe d'apprentissage :</p>     
+    <header class="col-md-10 offset-1">
+      <img src="src/assets/img/bannerCSM.png" alt="banner Campus Sud des Métiers" id="banner">
+    </header>
+    <form onsubmit="return false;" id="formElement" class="col-sm-12 col-md-10 offset-md-1">
+    <!-- __________________________TAXE APPRENTISSAGE____________________________ -->
+    <div>
+      <h1 class="title text-center mb-5 mt-3">Versez votre taxe d'apprentissage</h1>
+        <!-- <p class="lead">Veuillez entrer votre masse salariale brute ci-dessous pour effectuer le calcul de votre taxe d'apprentissage :</p>      -->
+      <div class="input-group mb-3 d-flex align-items-baseline">
+        <label for="MS" class="col-md-5">Votre masse salariale brute</label>
+        <input type="number" class="form-control col-11 col-md-6" aria-label="Votre masse salariale brute" id="MS" name="name"  data-model="name">
+        <span class="col-1"><p class="title">€</p></span>
       </div>
-      <div class="input-group mb-3">
-        <input type="number" class="form-control" placeholder="Votre masse salariale brute" aria-label="Votre masse salariale brute" id="MS">
-        <div class="input-group-append">
-          <button class="btn btn-outline-success" id="calcul">Effectuer le calcul</button>
+      <div class="input-group mb-3 d-flex align-items-baseline" id="TA">
+        <label for="contributionTA" class="col-md-5">Votre taxe d'apprentissage :</label>
+        <input type="text" class="form-control col-11 col-md-6" data-binding="name" placeholder="68%" value="" id="contributionTA" readonly>
+        <span class="col-1"><p class="title">€</p></span>
+      </div>
+    </div>
+    <!-- ________________________________VERSEMENT______________________________ -->
+    <div class="mb-4">
+      <h2 class="title text-center mb-5 mt-4">Versement</h2>
+      <div class="form-row">
+        <div class="col-12 col-md-6 mb-3 d-flex flex-column justify-content-betweeen">
+          <label class="center">OPCO</label>
+          <input class="form-control col-md-8 offset-md-2" placeholder="87%" value="" data-binding="contributionOPCA" id="contributionOPCA" readonly>
+        </div>
+        <div class="col-12 col-md-6 mb-3 d-flex flex-column justify-content-betweeen">
+          <label class="center">Etablissement de formation habilité</label>
+          <input class="form-control col-md-8 offset-md-2" placeholder="13%" value="" data-binding="contributionETS" id="contributionETS" readonly>
         </div>
       </div>
-      <p class="isHidden" id="errorNoValue">Merci de renseigner une valeur</p>
-      <div class="isHidden col-12 p-0" id="TA">
-        <p class="lead">Votre contribution à la Taxe d'Apprentissage (en €):</p>
-        <input class="form-control" value="" id="contributionTA" readonly>
-      </div>
-      <div class="spinner-border isHidden" role="status" id="spinnerCalcul">
-        <span class="sr-only">Loading...</span>
-      </div>      
-      <div class="isHidden" id="detailCalcul">
-        <div class="row">
-          <div class="col-12 col-md-6 d-flex flex-column justify-content-between">
-            <p class="lead">Montant à verser à votre OPCA (en €) :</p>
-            <input class="form-control" value="" id="contributionOPCA" readonly>
+    </div>
+    <!-- ______________________DESTINATAIRE VERSEMENT____________________________ -->
+    <div>
+      <h2 class="title text-center mb-5 mt-4">Je verse aux établissements <br> du Campus Sud des Métiers</h2>
+        <div class="col-md-12 mb-3">
+          <div class="form-row d-flex align-items-baseline justify-content-center">
+            <div class="custom-control custom-radio col-12 col-md-6 d-flex justify-content-center">
+              <input type="radio" id="sommeTotal" name="customRadio" class="custom-control-input">
+              <label class="custom-control-label" for="sommeTotal">Je verse la totalité</label>
+            </div>
+            <div class="col-12 col-md-6 mb-3 d-flex flex-column justify-content-betweeen">
+              <input class="form-control col-md-8 offset-md-2" placeholder="87%" value="" data-binding="totalETS" id="" readonly>
+            </div>
           </div>
-          <div class="col-12 col-md-6 d-flex flex-column justify-content-between">
-            <p class="lead">Montant à verser directement aux établissements de votre choix (en €) :</p>
-            <input class="form-control" value="" id="contributionETS" readonly>
-          </div>          
-          <a href='versement.html' class="btn btn-outline-success">Effectuer le paiement aux établissements CSM groupe CCI</a>
+          <div class="form-row d-flex align-items-baseline justify-content-center">
+            <div class="custom-control custom-radio col-12 col-md-6 d-flex justify-content-center">
+              <input type="radio" id="sommePartiel" name="customRadio" class="custom-control-input">
+              <label class="custom-control-label" for="sommePartiel">Je verse la somme de </label>
+            </div>
+            <div class="col-12 col-md-6 mb-3 d-flex flex-column justify-content-betweeen">
+              <input class="form-control col-md-8 offset-md-2" value="" id="" type="number">
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+      <!-- ______________________RENSEIGNEMENTS____________________________ -->
+      <div class="form-row">
+        <div class="col-md-6">
+          <h6 class="title text-center mb-5 mt-4">Etablissment habilités <br> du Campus Sud des Métiers</h6>
+          <p class="font-weight-bold">ICS (Institut du commerce et des Services</p>
+          <p>Code UAI : 0062149D</p>
+          <p class="font-weight-bold">POINT A</p>
+          <p>Code UAI : 006011ZZ</p>
+          <p class="font-weight-bold">INB (Institut Nautique B Côte d'Azur</p>
+          <p>Code UAI : 0060918R</p>
+        </div>
+        <div class="col-md-6 verticalLine pl-5 mb-5">
+          <h6 class="title text-center mb-5 mt-4">Pourquoi verser la Taxe d'apprentissage <br> au Campus Sud des Métiers ?</h6>
+          <p>- Pour accompagner le développement de Formations adaptés aux métiers et compétences de notre territoire.</p>
+          <p>- Pour organiser les parcours de réussite de chaque apprenti en vue de réaliser son insertion professionelle.</p>
+          <p>- Pour connecter les Apprentis au monde de l'entreprise.</p>
+          <p>- Pour bénéficier d'infrastructures offrant aux apprentis les moyens d'innover et d'entreprendre.</p>
+        </div>
+      </div>
+      <!-- ______________________VOTRE ENTREPRISE____________________________ -->
+      <div>
+        <h2 class="title text-center mb-5 mt-4">Votre entreprise</h2>
+        <div class="form-row">
+          <div class="col-md-6 mb-3 d-flex align-items-center flex-column">
+            <label for="validationSociale">Raison sociale</label>
+            <input type="text" class="form-control col-8" id="validationSociale" value="" required>
+          </div>
+          <div class="col-md-6 mb-3 d-flex align-items-center flex-column">
+            <label for="validationSiret">SIREN</label>
+            <input type="text" class="form-control col-8" id="validationSiret" value="" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3 d-flex align-items-center flex-column">
+            <label for="validationMail">Email</label>
+              <input type="mail" class="form-control col-8" id="validationMail" required>
+          </div>
+          <div class="col-md-6 mb-3 d-flex align-items-center flex-column">
+            <label for="validationTelephone">Téléphone</label>
+              <input type="tel" class="form-control col-8" id="validationTelephone" required>
+          </div>
+        </div>
+      </div>
+      <!-- ______________________MODE DE REGREMENT____________________________ -->
+      <div>
+        <h2 class="title text-center mb-5 mt-4">Mode de règlement</h2>
+        <div class="col-md-8 offset-md-2 d-flex justify-content-around">
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="paiement1" name="customPaiement" class="custom-control-input">
+            <label class="custom-control-label" for="paiement1" value="cheque">Chèque</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="paiement2" name="customPaiement" class="custom-control-input">
+            <label class="custom-control-label" for="paiement2" value="RIB">Virement</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-10 offset-md-1 mt-5 mb-5">
+        <button class="btn w-100 " type="submit" id="send">Je télécharge mon bordereau de versement</button>
+      </div>
+      <!-- <button class="btn btn-primary" type="submit" id="send">Envoyer</button> -->
+      <!-- <button class="btn btn-warning" type="button" id="getPDF" disabled>Get PDF</button>
+      <button class="btn btn-danger" type="reset" id="reloadForm" disabled>Reload Form</button> -->
+    </form>
+  </section>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>   
     <script src="src/js/bootstrap/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

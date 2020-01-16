@@ -1,3 +1,7 @@
+form {
+    background-color: #f3f3f3;
+}
+
 .isHidden {
     display: none;
 }
@@ -5,3 +9,40 @@
 .isDisplayed {
     display: block;
 }
+
+#banner {
+    max-width: 100%;
+    width: 100%;
+}
+
+.title {
+    color: #3c42de;
+}
+
+input {
+    text-align: center;
+    border-radius: 25px !important;
+}
+
+.center{
+    text-align: center;
+} 
+
+.verticalLine {
+  border-left: thin solid gray;
+}
+
+#send {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fb7629+0,fb8217+50,f69302+100 */
+    background: #fb7629; /* Old browsers */
+    background: -moz-linear-gradient(left,  #fb7629 0%, #fb8217 50%, #f69302 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #fb7629 0%,#fb8217 50%,#f69302 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #fb7629 0%,#fb8217 50%,#f69302 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fb7629', endColorstr='#f69302',GradientType=1 ); /* IE6-9 */
+
+    color: white;
+    text-align: center;
+    border-radius: 50px !important;
+    padding: 10px 0;
+}
+
