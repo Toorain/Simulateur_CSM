@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'Sen';
+    src: url('../../src/assets/fonts/Sen-Bold.woff2') format('woff2'),
+        url('../../src/assets/fonts/Sen-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.ETSBoldIta {
+    font-weight: bold;
+    font-style: italic;
+}
+
 form {
     background-color: #f3f3f3;
 }
@@ -17,6 +30,8 @@ form {
 
 .title {
     color: #3c42de;
+    font-family: 'Sen', arial, serif;
+    font-size: 1.8em;
 }
 
 input {
@@ -32,6 +47,11 @@ input {
   border-left: thin solid gray;
 }
 
+.verticalLine p {
+    font-size: .9em;
+    font-style: italic;
+}
+
 #send {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fb7629+0,fb8217+50,f69302+100 */
     background: #fb7629; /* Old browsers */
@@ -44,5 +64,7 @@ input {
     text-align: center;
     border-radius: 50px !important;
     padding: 10px 0;
+    font-family: 'Sen', arial, serif;
+    font-size: 1.2em;
 }
 

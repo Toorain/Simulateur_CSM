@@ -19,11 +19,11 @@
       <h1 class="title text-center mb-5 mt-3">Versez votre taxe d'apprentissage</h1>
       <div class="input-group mb-3 d-flex align-items-baseline">
         <label for="MS" class="col-md-5">Votre masse salariale brute</label>
-        <input type="number" class="form-control col-11 col-md-6" aria-label="Votre masse salariale brute" id="MS" name="name"  data-model="name">
+        <input type="number" class="form-control col-11 col-md-6" aria-label="Votre masse salariale brute" id="MS" name="name"  data-model="name" required>
         <span class="col-1"><p class="title">€</p></span>
       </div>
       <div class="input-group mb-3 d-flex align-items-baseline" id="TA">
-        <label for="contributionTA" class="col-md-5">Votre taxe d'apprentissage :</label>
+        <label for="contributionTA" class="col-md-5">Votre taxe d'apprentissage</label>
         <input type="text" class="form-control col-11 col-md-6" data-binding="name" placeholder="68%" value="" id="contributionTA" readonly>
         <span class="col-1"><p class="title">€</p></span>
       </div>
@@ -61,7 +61,8 @@
               <label class="custom-control-label" for="sommePartiel">Je verse la somme de </label>
             </div>
             <div class="col-12 col-md-6 mb-3 d-flex flex-column justify-content-betweeen">
-              <input class="form-control col-md-8 offset-md-2" value="" id="inputPartiel" type="number">
+              <input class="form-control col-md-8 offset-md-2" value="" id="inputPartiel" type="float">
+              <small id="errorSomme"></small>
             </div>
           </div>
         </div>
@@ -70,11 +71,11 @@
       <div class="form-row">
         <div class="col-md-6">
           <h6 class="title text-center mb-5 mt-4">Etablissment habilités <br> du Campus Sud des Métiers</h6>
-          <p class="font-weight-bold">ICS (Institut du commerce et des Services</p>
+          <p class="ETSBoldIta">ICS (Institut du commerce et des Services)</p>
           <p>Code UAI : 0062149D</p>
-          <p class="font-weight-bold">POINT A</p>
+          <p class="ETSBoldIta">POINT A</p>
           <p>Code UAI : 006011ZZ</p>
-          <p class="font-weight-bold">INB (Institut Nautique B Côte d'Azur</p>
+          <p class="ETSBoldIta">INB (Institut Nautique B Côte d'Azur)</p>
           <p>Code UAI : 0060918R</p>
         </div>
         <div class="col-md-6 verticalLine pl-5 mb-5">
@@ -86,31 +87,31 @@
         </div>
       </div>
       <!-- ______________________VOTRE ENTREPRISE____________________________ -->
-      <div>
+      <div class="mb-5">
         <h2 class="title text-center mb-5 mt-4">Votre entreprise</h2>
         <div class="form-row">
           <div class="col-md-6 mb-3 d-flex align-items-center flex-column">
             <label for="validationSociale">Raison sociale</label>
-            <input type="text" class="form-control col-8" id="validationSociale" value="">
+            <input type="text" class="form-control col-8" id="validationSociale" value="" required>
           </div>
           <div class="col-md-6 mb-3 d-flex align-items-center flex-column">
             <label for="validationSiret">SIREN</label>
-            <input type="text" class="form-control col-8" id="validationSiret" value="">
+            <input type="text" class="form-control col-8" id="validationSiret" value="" required>
           </div>
         </div>
         <div class="form-row">
           <div class="col-md-6 mb-3 d-flex align-items-center flex-column">
             <label for="validationMail">Email</label>
-              <input type="mail" class="form-control col-8" id="validationMail">
+              <input type="mail" class="form-control col-8" id="validationMail" required>
           </div>
           <div class="col-md-6 mb-3 d-flex align-items-center flex-column">
             <label for="validationTelephone">Téléphone</label>
-              <input type="tel" class="form-control col-8" id="validationTelephone">
+              <input type="tel" class="form-control col-8" id="validationTelephone" requires>
           </div>
         </div>
       </div>
       <!-- ______________________MODE DE REGREMENT____________________________ -->
-      <div>
+      <div class="mt-5 mb-5">
         <h2 class="title text-center mb-5 mt-4">Mode de règlement</h2>
         <div class="col-md-8 offset-md-2 d-flex justify-content-around">
           <div class="custom-control custom-radio custom-control-inline">
@@ -124,7 +125,8 @@
         </div>
       </div>
       <div class="col-md-10 offset-md-1 mt-5 mb-5">
-        <button class="btn w-100 " type="submit" id="send">Je télécharge mon bordereau de versement</button>
+        <small id="errorForm"></small>
+        <button class="btn w-100" type="submit" id="send">Je télécharge mon bordereau de versement</button>
       </div>
       <!-- <button class="btn btn-primary" type="submit" id="send">Envoyer</button> -->
       <!-- <button class="btn btn-warning" type="button" id="getPDF" disabled>Get PDF</button>
